@@ -9,7 +9,7 @@ pipeline {
     stages {
         stage('create docker image') {
             steps {
-                dir('')
+               
                 sh 'docker build .'
                 echo 'Hello World'
             }
