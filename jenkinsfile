@@ -1,0 +1,18 @@
+pipeline {
+    agent any
+
+    options{
+        buildDiscared(LogRotator(numToKeepStr: '10', ArtifactNumKeepStr '10'))
+        timestamps()
+    }
+
+    stages {
+        stage('create docker image') {
+            steps {
+                dir('docker')
+                sh 'docker build .'
+                echo 'Hello World'
+            }
+        }
+    }
+
