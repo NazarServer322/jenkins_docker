@@ -14,8 +14,8 @@ pipeline {
         stage("create docker image") {
             steps {
                 echo " ============== start building image =================="
-                 {
-                	sh 'docker build nazarserver/mongo . '
+                dir ('docker') {
+                	sh 'docker build . '
                 }
             }
         }
